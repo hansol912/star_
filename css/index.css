@@ -1,0 +1,1176 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: none;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/**/
+body{
+    background: url(../source/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    font-family: "Noto Sans kr",sans-serif;
+    position: relative;
+
+}
+body::after{
+  content: '';
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: -5;
+}
+
+.navbar{
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 999999;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    max-width: 1500px;
+    background-color: #27324b;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:12px;
+    position: relative;
+}
+.toggle{
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.toggle img{
+    width: 32px;
+    height: 32px;
+}
+.nav-left{
+    background-color: #151924; /* 블리저드 쪽 더 진하게 */
+    max-width: 200px;
+    height: 80px;
+    display: flex;
+    padding:20px;           
+    border-radius:12px 0 0 12px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.nav-right{
+    background-color: #27324b; /* 메뉴 쪽 살짝 밝게 */
+    height: 80px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    transform: translate(-60px);
+}
+
+.nav-right .menu{
+    display: flex;
+    transform: translate(-180px);
+}
+.nav-right .menu li:hover a{
+  background-color: #cfcfcf57;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+.nav-right .menu li a{
+    font: bold 18px/1.5 "Noto Sans kr";
+    color: #fff;
+    margin-right: 40px;
+}
+@media all and (max-width:1023px){
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b2640;
+    border-radius: 12px;
+  }
+
+  .toggle {
+    display: none; /* 햄버거 메뉴 숨김 */
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-left img {
+    height: 40px;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu li a {
+    font: bold 16px "Noto Sans KR";
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .util {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  .util li {
+    white-space: nowrap;
+  }
+
+  .util li a {
+    font: bold 16px "Noto Sans KR";
+    color: #fff;
+  }
+
+  .util .cta {
+    background-color: #B2700F;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+}
+
+@media all and (max-width:767px){
+    .toggle{
+        display: block;
+        margin-left: 15px;
+    }
+    .menu{
+        display: none !important;
+    }
+    .logo{
+        display: none;
+    }
+    .nav-left{
+        background: none;
+    }
+    .nav-right .sc-icon{
+        display: block;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        transform: translate(110px,-5px);
+    }
+    .util .play{
+        display: none;
+    }
+    .util .btn a{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+        transform: translate(70px,-10px);
+    }
+    .util .btn a span{
+        display: none;
+    }
+    .navbar{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.util{
+    display: flex;
+}
+.btn{
+    display: flex;
+    width: 150px;
+    height: 80px;
+}
+.btn img{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    margin-right: 10px;
+    margin-bottom: -10px;
+}
+.btn a{
+    font: bold 18px/1 "Noto Sans kr";
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    
+}
+.btn a:hover{
+  background-color: #cfcfcf57;
+  border-radius: 10px;
+}
+.util>li{
+    width: 150px;
+    height: 80px;
+    background-color: #B2700F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:0 12px 12px 0;
+}
+.util>li:hover{
+  background-color: #ffc163;
+}
+.util>li a{
+    font: bold 18px/1 "Noto Sans kr";
+    color: #fff;
+}
+/*header끝*/
+section{
+    height: auto;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section .star{
+    max-width: 600px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+section .star img{
+    width: 100%;
+    max-width: 600px;
+    margin-top: 50px;
+}
+.text{
+    max-width: 600px;
+    text-align: center;
+}
+.text h2{
+    font: bold 50px/1.5 "Noto Sans kr";
+    color: #fff;
+    margin-top: 50px
+}
+.text p{
+    font: 500 20px/1.5 "Noto Sans kr";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #C0E1F2;
+    margin-top: 30px;
+}
+.now{
+    background-color: #301D0C;
+    padding: 10px;
+    max-width: 150px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.now p{
+    background-color: #301D0C;
+    border: 2px solid #FADDA3;
+    padding: 10px;
+    text-align: center;
+    color: #FEDD9A;
+    font: bold 18px/1 "Noto Sans kr";
+    border-radius: 5px;
+}
+.now p:hover{
+  filter: drop-shadow(0 0 10px rgb(255, 196, 0));
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+article{
+    max-width: 200px;
+    margin-top: 80px;
+    text-align: center;
+}
+article p{
+    font: 500 16px/1 "Noto Sans kr";
+    color: #868B91;
+}
+article a img{
+  margin-top: 20px;
+  height: auto;
+  width: 200px;
+}
+@media all and( max-width: 1023px ) {
+    section{
+        padding: 60px,15px
+    }
+    .text h2{
+        font-size: 30px;
+    }
+    .text p{
+        font: 15px;
+    }
+    .star img{
+        max-width: 200px;
+    }
+    .now{
+        max-width: 120px;
+    }
+    .now p{
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    article p{
+        font-size: 15px;
+    }
+    article a img{
+        width: 100px;
+    }
+}
+@media all and (max-width: 767px) {
+    section {
+        padding: 60px 12px;
+    }
+
+    .text h2 {
+        font-size: 26px;
+        margin-top: 30px;
+    }
+
+    .text p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .star img {
+        max-width: 160px;
+        margin-top: 30px;
+    }
+
+    .now {
+        max-width: 120px;
+        padding: 6px;
+    }
+
+    .now p {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    article p {
+        font-size: 14px;
+    }
+
+    article a img {
+        width: 100px;
+    }
+}
+
+/**/
+
+section.two {
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  height: 400px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+section.two .text {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+section.two .text h2 {
+  font-size: 32px;
+}
+
+section.two .text p {
+  font-size: 18px;
+  line-height:-5;
+}
+
+section.two .media {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+section.two .media video {
+  width: 100%;
+  height: auto;
+}
+@media all and (max-width: 1023px) {
+  section.two {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  section.two .text,
+  section.two .media {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  section.two .text h2 {
+    font-size: 26px;
+  }
+
+  section.two .text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  section.two .media video {
+    width: 100%;
+    height: auto;
+  }
+}
+@media all and (max-width: 767px) {
+  section.two .text h2 {
+    font-size: 22px;
+  }
+
+  section.two .text p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  section.two {
+    padding: 10px;
+  }
+
+  section.two .media {
+    margin-bottom: 10px;
+  }
+}
+/*Section끝*/
+/*bannerone*/
+.bannerone{
+  width: 100%;
+  height: auto;
+  background: url(../source/banner.png);
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  border-top: 3px solid #a2a2a2;
+}
+.bannerone .title{
+  text-align: center;
+  padding: 20px;
+}
+.bannerone .title h2{
+  font: bold 30px/1 "Noto Sans kr";
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.bannerone .title p{
+  font: 400 18px/1 "Noto Sans kr";
+  letter-spacing: -1.5px;
+  color: #C0E1F2;
+}
+.bannerone>ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.bannerone>ul>li{
+  text-align: center;
+  margin-top: 20px;
+}
+.bannerone>ul>li img{
+  max-width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.bannerone>ul>li h3{
+  font: bold 20px/1 "Noto Sans kr";
+  color: #fff;
+  letter-spacing: -1.2px;
+  padding: 10px;
+}
+.bannerone>ul>li p{
+  font: 400 16px/1.2 "Noto Sans kr";
+  color: #C0E1F2;
+  letter-spacing: -1.2px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+@media all and (max-width: 1023px) {
+  .bannerone>ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bannerone>ul>li {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .bannerone .title h2 {
+    font-size: 26px;
+  }
+
+  .bannerone .title p {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .bannerone>ul>li {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .bannerone .title h2 {
+    font-size: 22px;
+  }
+
+  .bannerone .title p {
+    font-size: 14px;
+  }
+
+  .bannerone>ul>li h3 {
+    font-size: 18px;
+  }
+
+  .bannerone>ul>li p {
+    font-size: 14px;
+  }
+}
+/*bannerone끝*/
+/*type시작*/
+.typetab{
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease-in-out;
+  color: #fff;
+  padding: 40px;
+  position: relative;
+  background-image: url(../source/protoss.ver.png);
+  border-top: 3px solid #a2a2a2;
+}
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+  z-index: 0;
+}
+
+#protoss:checked ~ .background {
+  background-image: url(../source/protoss.ver.png);
+}
+#terran:checked ~ .background {
+  background-image: url(../source/terran.ver.png);
+}
+#zerq:checked ~ .background {
+  background-image: url(../source/zerq.png);
+}
+
+
+/* 선택된 종족만 보이게 */
+#protoss:checked ~ .protoss,
+#terran:checked ~ .terran,
+#zerq:checked ~ .zerq {
+  display: block;
+}
+.icons label{
+  margin-right: 50px;
+  padding: 20px;
+}
+.icons img{
+  height: 80px;
+  width: 100px;
+}
+.icons, .panel {
+  position: relative;
+  z-index: 1;
+}
+.panel h2{
+  font: bold 30px/1 "Noto Sans kr";
+  margin-left: 40px;
+  margin-top: 50px;
+}
+.panel p{
+  padding: 20px;
+  font: 400 16px/1.5 "Noto Sans kr";
+  letter-spacing: -1.0px;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.typetab label img {
+  width: 60px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  
+}
+.typetab .icons {
+  padding: 20px;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.typetab input[type="radio"] {
+  display: none;
+}
+
+#protoss:checked ~ .icons label[for="protoss"] img,
+#terran:checked ~ .icons label[for="terran"] img,
+#zerq:checked ~ .icons label[for="zerq"] img {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0%) drop-shadow(0 0 8px #fff);
+}
+
+/* 전체 패널 숨기기 */
+.typetab .panel {
+  display: none;
+  color: white;
+  text-align: left;
+}
+
+/* 선택된 종족만 보이게 */
+#protoss:checked ~ .protoss,
+#terran:checked ~ .terran,
+#zerq:checked ~ .zerq {
+  display: block;
+}
+@media all and (max-width: 1023px){
+  .typetab {
+    background-position: center center;
+    background-size: cover;
+    padding: 60px 40px;
+  }
+
+  .icons {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .icons label img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .panel {
+    padding: 40px 20px;
+  }
+
+  .panel h2 {
+    font-size: 26px;
+  }
+
+  .panel p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+@media all and (max-width: 767px) {
+  .typetab {
+    background-position: center top;
+    background-size: cover;
+    padding: 40px 20px;
+  }
+
+  .icons {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .icons label img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .panel {
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .panel h2 {
+    font-size: 22px;
+  }
+
+  .panel p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+/*type끝*/
+/*last시작*/
+.last{
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-image: url(../source/banner.png);
+  border-top: 3px solid #a2a2a2;
+}
+.last h2{
+  font: bold 30px/1 "Noto Sans kr";
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+.last ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.last li {
+  list-style: none;
+  position: relative;
+  width: 300px;
+  height: 500px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin-bottom: 50px;
+}
+.last>ul>li h3{
+  font: bold 24px/1 "Noto Sans kr";
+  color: #fff;
+}
+
+.last li:hover {
+  transform: scale(1.03);
+}
+
+.last li img,
+.last li video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+/* 처음엔 영상 숨김 */
+.last li video {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover 시 영상 보이게, 이미지 숨김 */
+.last li:hover video {
+  opacity: 1;
+}
+
+.last li:hover img {
+  opacity: 0;
+}
+
+.last h3, .last p {
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+}
+@media (max-width: 1023px) {
+  .last ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  .last {
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .last li img,
+  .last li video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .last h2 {
+    font-size: 24px;
+    padding: 30px;
+  }
+
+  .last>ul>li h3 {
+    font-size: 20px;
+  }
+
+  .last>ul>li p {
+    font-size: 16px;
+  }
+@media (max-width: 767px) {
+  .last h2 {
+    font-size: 22px;
+    padding: 20px;
+  }
+
+  .last>ul>li h3 {
+    font-size: 18px;
+  }
+
+  .last>ul>li p {
+    font-size: 15px;
+  }
+}
+/**/
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 20px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 소셜 */
+footer .sosial {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+footer .sosial h2 {
+  font: bold 30px/1 "Noto Sans kr";
+  margin-bottom: 50px;
+}
+
+footer .sosial>ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .sosial>ul li:hover{
+  filter: drop-shadow(0 0 10px #9cf);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+footer .sosial img{
+  width: 50px;
+  height: 50px;
+}
+
+/* nav 메뉴 */
+footer .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+footer .nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+footer .nav li {
+  list-style: none;
+}
+footer .nav li a:hover{
+  color: #444;
+}
+
+footer .nav a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+footer .nav p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+footer .nav img {
+  width: 16px;
+  margin-right: 8px;
+}
+
+/* middle info */
+footer .middle {
+  text-align: justify;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+footer .middle img {
+  width: 150px;
+  height: 100px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+}
+
+footer .middle p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+footer .middle ul {
+  flex-wrap: wrap;
+  position: absolute;
+  top: 40px;
+  left: 150px;
+  max-width: 500px;
+  display: flex;
+
+}
+footer .middle li{
+  padding: 10px;
+}
+
+footer .middle a {
+  font: 400 12px/1 "Noto Sans kr";
+  color: #fff;
+}
+
+/* bottom info */
+footer .bottom p{
+  font: bold 16px/1 "Noto Sans kr";
+  color: #fff;
+  letter-spacing: -0.5px;
+  position: relative;
+  top: 130px;
+  left: 10px;
+}
+
+footer .bottom ul {
+  display: flex;
+  max-width: 600px;
+  position: relative;
+  top: 30px;
+  left: 400px;
+}
+@media all and (max-width: 1023px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  /* 소셜 */
+  footer .sosial h2 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  footer .sosial img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* nav */
+  footer .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  footer .nav ul {
+    justify-content: center;
+  }
+
+  footer .nav p {
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  /* middle */
+  footer .middle {
+    position: static;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  footer .middle img {
+    position: static;
+    margin: 0 auto 10px;
+    display: block;
+    width: 140px;
+    height: auto;
+  }
+
+  footer .middle p {
+    position: static;
+    margin: 10px auto;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+  }
+
+  footer .middle ul {
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  footer .middle li {
+    padding: 8px;
+  }
+
+  /* bottom */
+  footer .bottom p {
+    position: static;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 40px;
+  }
+
+  footer .bottom ul {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  footer .bottom ul li img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+@media all and (max-width: 767px) {
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  /* 소셜 아이콘 줄이기 */
+  footer .sosial h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  footer .sosial img {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* nav */
+  footer .nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  footer .nav ul {
+    justify-content: center;
+  }
+
+  footer .nav p {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* middle */
+  footer .middle {
+    text-align: center;
+    position: static;
+  }
+
+  footer .middle img {
+    position: static;
+    margin: 0 auto 10px;
+    display: block;
+    width: 120px;
+    height: auto;
+  }
+
+  footer .middle p {
+    position: static;
+    font-size: 13px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  footer .middle ul {
+    position: static;
+    justify-content: center;
+    text-align: center;
+  }
+
+  footer .middle li {
+    padding: 5px;
+  }
+
+  /* bottom */
+  footer .bottom p {
+    position: static;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 40px;
+    line-height: 1.5;
+  }
+
+  footer .bottom ul {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  footer .bottom ul li img {
+    height: 35px;
+    width: auto;
+  }
+}
